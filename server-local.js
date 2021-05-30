@@ -10,9 +10,6 @@ router.get('/public/authentication.js', (req, res) => {
 });
 
 
-app.use(bodyParser.json());
-app.use('/.netlify/functions/server', router);  // path must route to lambda
-
 module.exports.handler = serverless(app);
 
 app.listen(3000, () => console.log('Local app listening on port 3000!'));
