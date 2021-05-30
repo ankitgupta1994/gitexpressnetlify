@@ -1,14 +1,15 @@
 'use strict';
-const express = require('express');
-const serverless = require('serverless-http');
-const app = express();
-const bodyParser = require('body-parser');
+// create an express app
+const express = require("express")
+const app = express()
 
-const router = express.Router();
-router.get('/public/authentication.js', (req, res) => {
+// use the express-static middleware
+app.use(express.static("public"))
+
+// define the first route
+app.get("../public/authentication.js", function (req, res) {
   res.send("<h1>Hello World!</h1>")
-});
-
+})
 
 module.exports.handler = serverless(app);
 
