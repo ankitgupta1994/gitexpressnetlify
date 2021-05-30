@@ -8,8 +8,7 @@ const router = express.Router();
 router.get('/public/authentication.js', (req, res) => {
   res.send("<h1>Hello World!</h1>")
 });
-router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
-router.post('/', (req, res) => res.json({ postBody: req.body }));
+
 
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
